@@ -59,6 +59,9 @@ class Converter {
     while (i < draftBlocks.length) {
       var curDraftBlock = draftBlocks[i];
       var block = blocks[i];
+      var prevBlock = i > 1 ? blocks[i - 1] : null;
+      var nextBlock = i < blocks.length - 1 ? blocks[i + 1] : null;
+
       var prevDraftBlock = i > 1 ? draftBlocks[i - 1] : null;
       var nextDraftBlock =
           i < draftBlocks.length - 1 ? draftBlocks[i + 1] : null;
@@ -83,25 +86,19 @@ class Converter {
 
       if (i < draftBlocks.length - 1) {
         if (block is ListBlock) {
-          /// If the block is above types, then add nothing
+          // extra new line when block ends
+          if (!(nextBlock is ListBlock)) {
+            retBlocks.add(NewlineBlock());
+          }
         } else {
-          /// Add new line
-          if (curDraftBlock.text.isNotEmpty &&
-              nextDraftBlock!.text.isNotEmpty) {
-            retBlocks.add(NewlineBlock());
-          } else if (curDraftBlock.type != nextDraftBlock!.type) {
-            retBlocks.add(NewlineBlock());
-          } else if (curDraftBlock.text.isEmpty &&
-              (prevDraftBlock?.text.isNotEmpty ?? false) &&
-              nextDraftBlock.text.isNotEmpty) {
-            retBlocks.add(NewlineBlock());
-          } else if (curDraftBlock.text.isEmpty &&
-              nextDraftBlock.text.isEmpty) {
+          retBlocks.add(NewlineBlock());
+          // extra new line before block starts
+          if (nextBlock is ListBlock) {
             retBlocks.add(NewlineBlock());
           }
         }
       }
-
+      
       i += 1;
     }
 
