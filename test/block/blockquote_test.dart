@@ -12,12 +12,12 @@ void main() {
     late BuildContext context;
     final themeData = ThemeData(
         textTheme: TextTheme(
-      headline1: TextStyle(fontSize: 25),
-      headline2: TextStyle(fontSize: 24),
-      headline3: TextStyle(fontSize: 23),
-      headline4: TextStyle(fontSize: 22),
-      headline5: TextStyle(fontSize: 21),
-      headline6: TextStyle(fontSize: 20),
+      displayLarge: TextStyle(fontSize: 25),
+      displayMedium: TextStyle(fontSize: 24),
+      displaySmall: TextStyle(fontSize: 23),
+      headlineMedium: TextStyle(fontSize: 22),
+      headlineSmall: TextStyle(fontSize: 21),
+      titleLarge: TextStyle(fontSize: 20),
     ));
     final key = Key("block-quote-content-${text.substring(0, 5)}");
 

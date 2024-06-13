@@ -47,7 +47,7 @@ class HeaderBlock extends BaseBlock {
 
     switch (level) {
       case 1:
-        var textStyle = Theme.of(context).textTheme.headline1!.copyWith(
+        var textStyle = Theme.of(context).textTheme.displayLarge!.copyWith(
               fontWeight: prevStyle.fontWeight,
               fontStyle: prevStyle.fontStyle,
               decoration: prevStyle.decoration,
@@ -56,7 +56,7 @@ class HeaderBlock extends BaseBlock {
         return textStyle;
 
       case 2:
-        var textStyle = Theme.of(context).textTheme.headline2!.copyWith(
+        var textStyle = Theme.of(context).textTheme.displayMedium!.copyWith(
               fontWeight: prevStyle.fontWeight,
               fontStyle: prevStyle.fontStyle,
               decoration: prevStyle.decoration,
@@ -66,7 +66,7 @@ class HeaderBlock extends BaseBlock {
         return textStyle;
 
       case 3:
-        var textStyle = Theme.of(context).textTheme.headline3!.copyWith(
+        var textStyle = Theme.of(context).textTheme.displaySmall!.copyWith(
               fontWeight: prevStyle.fontWeight,
               fontStyle: prevStyle.fontStyle,
               decoration: prevStyle.decoration,
@@ -74,7 +74,7 @@ class HeaderBlock extends BaseBlock {
             );
         return textStyle;
       case 4:
-        var textStyle = Theme.of(context).textTheme.headline4!.copyWith(
+        var textStyle = Theme.of(context).textTheme.headlineMedium!.copyWith(
               fontWeight: prevStyle.fontWeight,
               fontStyle: prevStyle.fontStyle,
               decoration: prevStyle.decoration,
@@ -82,7 +82,7 @@ class HeaderBlock extends BaseBlock {
             );
         return textStyle;
       case 5:
-        var textStyle = Theme.of(context).textTheme.headline5!.copyWith(
+        var textStyle = Theme.of(context).textTheme.headlineSmall!.copyWith(
               fontWeight: prevStyle.fontWeight,
               fontStyle: prevStyle.fontStyle,
               decoration: prevStyle.decoration,
@@ -90,7 +90,7 @@ class HeaderBlock extends BaseBlock {
             );
         return textStyle;
       default:
-        var textStyle = Theme.of(context).textTheme.headline6!.copyWith(
+        var textStyle = Theme.of(context).textTheme.titleLarge!.copyWith(
               fontWeight: prevStyle.fontWeight,
               fontStyle: prevStyle.fontStyle,
               decoration: prevStyle.decoration,
